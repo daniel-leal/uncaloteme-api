@@ -3,6 +3,7 @@
 /doc
 /tmp
 /node_modules
+.elixir_ls
 
 /assets/node_modules
 
