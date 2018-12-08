@@ -7,5 +7,9 @@ defmodule UncaloteMeWeb.Router do
 
   scope "/api", UncaloteMeWeb do
     pipe_through :api
+
+    resources "/debtors", DebtorController, except: [:new, :edit] do
+      resources "/debts", DebtController, except: [:new, :edit]
+    end
   end
 end

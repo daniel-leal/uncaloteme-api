@@ -4,6 +4,7 @@
 /tmp
 /node_modules
 .elixir_ls
+.vscode
 
 /assets/node_modules
 
