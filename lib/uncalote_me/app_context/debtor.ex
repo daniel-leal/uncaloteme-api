@@ -18,5 +18,8 @@ defmodule UncaloteMe.AppContext.Debtor do
     debtor
     |> cast(attrs, [:name, :email, :phone, :avatar])
     |> validate_required([:name])
+    |> validate_format(:email, ~r/@/)
+    |> validate_length(:phone, min: 8)
+    |> unique_constraint(:email)
   end
 end
