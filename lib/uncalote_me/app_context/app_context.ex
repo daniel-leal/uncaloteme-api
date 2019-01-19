@@ -113,9 +113,10 @@ defmodule UncaloteMe.AppContext do
       [%Debt{}, ...]
 
   """
-  def list_debts do
+  def list_debts(debtor_id) do
     # Repo.all from d in Debt, preload: [:debtor]
-    Repo.all(Debt)
+    query = from d in Debt, where: d.debtor_id == ^debtor_id
+    Repo.all(query)
   end
 
   @doc """

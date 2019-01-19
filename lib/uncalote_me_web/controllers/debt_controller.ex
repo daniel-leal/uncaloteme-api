@@ -7,7 +7,7 @@ defmodule UncaloteMeWeb.DebtController do
   action_fallback UncaloteMeWeb.FallbackController
 
   def index(conn, params) do
-    debts = AppContext.list_debts()
+    debts = AppContext.list_debts(params["debtor_id"])
     render(conn, "index.json", debts: debts)
   end
 
